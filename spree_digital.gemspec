@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
   s.author       = 'Saman Mohamadi'
   s.email        = 'mohamadi.saman@gmail.com'
   s.homepage     = 'https://github.com/samanmohamadi/solidus_digital.git'
-  s.files        = `git ls-files`.split("\n")
-  s.test_files   = `git ls-files -- {test,spec,features}/*`.split("\n")
+  # s.files        = `git ls-files`.split("\n")
+  # s.test_files   = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_path = 'lib'
   s.requirements << 'none'
   s.required_ruby_version = '>= 2.1.0'

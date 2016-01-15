@@ -1,0 +1,18 @@
+{
+  "name": "solidus_digital",
+  "description": "[![Compatibility](https://img.shields.io/badge/spree%20compatibility-3.0-pink.svg)](https://github.com/spree-contrib/solidus_digital/blob/master/Versionfile) [![Build Status](https://travis-ci.org/spree-contrib/solidus_digital.png?branch=master)](https://travis-ci.org/spree-contrib/solidus_digital) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://github.com/spree-contrib/solidus_digital/blob/master/LICENSE.md) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/spree-contrib/solidus_digital)",
+  "main": "index.js",
+  "authors": [
+    "Saman Mohamadi <mohamadi.saman@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/samanmohamadi/solidus_digital",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
