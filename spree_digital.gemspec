@@ -1,22 +1,22 @@
 Gem::Specification.new do |s|
   s.platform     = Gem::Platform::RUBY
-  s.name         = 'spree_digital'
-  s.version      = '1.1.3'
+  s.name         = 'solidus_digital'
+  s.version      = '1.1.0'
   s.summary      = ''
   s.description  = 'Digital download functionality for spree'
-  s.authors      = ['funkensturm', 'Michael Bianco', 'Tania Rubio']
-  s.email        = ['info@cliffsidedev.com', 'taniarubiov@gmail.com']
-  s.homepage     = 'http://www.funkensturm.com'
+  s.author       = 'Saman Mohamadi'
+  s.email        = 'mohamadi.saman@gmail.com'
+  s.homepage     = 'https://github.com/samanmohamadi/solidus_digital.git'
   s.files        = `git ls-files`.split("\n")
   s.test_files   = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_path = 'lib'
   s.requirements << 'none'
   s.required_ruby_version = '>= 2.1.0'
 
-  s.add_dependency 'spree_api'
-  s.add_dependency 'spree_backend', '~> 3.0.0'
-  s.add_dependency 'spree_core', '~> 3.0.0'
-  s.add_dependency 'spree_frontend'
+  s.add_dependency 'solidus_api'
+  s.add_dependency 'solidus_backend'
+  s.add_dependency 'solidus_core'
+  s.add_dependency 'solidus_frontend'
 
   # test suite
   s.add_development_dependency 'shoulda-matchers'

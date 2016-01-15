@@ -40,11 +40,11 @@ module Spree
     end
 
     def expired?
-      SpreeDigital::Config[:expirable_links] && (self.created_at <= SpreeDigital::Config[:authorized_days].day.ago)
+      SolidusDigital::Config[:expirable_links] && (self.created_at <= SolidusDigital::Config[:authorized_days].day.ago)
     end
 
     def access_limit_exceeded?
-      SpreeDigital::Config[:expirable_links] && (self.access_counter >= SpreeDigital::Config[:authorized_clicks])
+      SolidusDigital::Config[:expirable_links] && (self.access_counter >= SolidusDigital::Config[:authorized_clicks])
     end
 
     # This method should be called when a download is initiated.
@@ -63,7 +63,7 @@ module Spree
     end
 
     def attachment_file_name
-      super || (SpreeDigital::Config[:per_user_attachment] ? [self.secret, self.original_attachment.original_filename].join('_') : self.original_attachment.original_filename)
+      super || (SolidusDigital::Config[:per_user_attachment] ? [self.secret, self.original_attachment.original_filename].join('_') : self.original_attachment.original_filename)
     end
 
     def attachment_dir
@@ -71,17 +71,17 @@ module Spree
     end
 
     def attachment_alias
-      SpreeDigital::Config[:per_user_attachment] ? self.attachment : self.original_attachment
+      SolidusDigital::Config[:per_user_attachment] ? self.attachment : self.original_attachment
     end
 
     private
     # def copy_digital
-    #   if SpreeDigital::Config[:per_user_attachment]
+    #   if SolidusDigital::Config[:per_user_attachment]
     #     begin
     #       new_copy = File.join(self.attachment_dir, self.attachment_file_name)
-    #       if SpreeDigital::Config.per_user_attachment_process.present?
+    #       if SolidusDigital::Config.per_user_attachment_process.present?
     #         puts "Executing Spree::Digital per_user_attachment_process..."
-    #         SpreeDigital::Config.per_user_attachment_process.call(self.original_attachment.path, new_copy, self)
+    #         SolidusDigital::Config.per_user_attachment_process.call(self.original_attachment.path, new_copy, self)
     #       else
     #         FileUtils.cp(self.original_attachment.path, new_copy)
     #       end
@@ -96,12 +96,12 @@ module Spree
     # end
 
     def copy_attachment_file!
-      if SpreeDigital::Config[:per_user_attachment]
+      if SolidusDigital::Config[:per_user_attachment]
         begin
           new_copy = File.join(self.attachment_dir, self.attachment_file_name)
-          if SpreeDigital::Config.per_user_attachment_process.present?
+          if SolidusDigital::Config.per_user_attachment_process.present?
             puts "Executing Spree::Digital per_user_attachment_process..."
-            SpreeDigital::Config.per_user_attachment_process.call(self.original_attachment.path, new_copy, self)
+            SolidusDigital::Config.per_user_attachment_process.call(self.original_attachment.path, new_copy, self)
           else
             FileUtils.cp(self.original_attachment.path, new_copy)
           end
@@ -122,7 +122,7 @@ module Spree
     end
 
     def check_remove_attachment_file
-      if !SpreeDigital::Config[:keep_digitals] && self.remove_attachment_file.eql?(1)
+      if !SolidusDigital::Config[:keep_digitals] && self.remove_attachment_file.eql?(1)
         begin
           FileUtils.rm(self.attachment.path) 
         rescue => e

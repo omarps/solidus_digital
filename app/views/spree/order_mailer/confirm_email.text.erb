@@ -40,10 +40,10 @@
 <%= Spree.t('order_mailer.confirm_email.digital_links_download') %>
 ============================================================
 
-<% if SpreeDigital::Config[:expirable_links] %>
+<% if SolidusDigital::Config[:expirable_links] %>
   <%= Spree.t('order_mailer.confirm_email.attention') %>
-  <%= Spree.t('spree.digitals.authorized_clicks', count: SpreeDigital::Config[:authorized_clicks]) %>
-  <%= Spree.t('spree.digitals.authorized_days', count: SpreeDigital::Config[:authorized_days]) %>
+  <%= Spree.t('spree.digitals.authorized_clicks', count: SolidusDigital::Config[:authorized_clicks]) %>
+  <%= Spree.t('spree.digitals.authorized_days', count: SolidusDigital::Config[:authorized_days]) %>
 <% end %>
 
 <% for item in @order.line_items %>

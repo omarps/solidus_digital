@@ -2,7 +2,7 @@ module Spree
   class DigitalsController < Spree::StoreController
     #force_ssl only: :show, if: :ssl_configured?
     rescue_from ActiveRecord::RecordNotFound, with: :resource_not_found
-    skip_before_filter :require_no_authentication, if: Proc.new { SpreeDigital::Config[:authentication_required] }
+    skip_before_filter :require_no_authentication, if: Proc.new { SolidusDigital::Config[:authentication_required] }
 
     def show
       if attachment.present? 
@@ -50,7 +50,7 @@ module Spree
       end
 
       def authorize_download!
-        !SpreeDigital::Config[:authentication_required] || !SpreeDigital::Config[:authorization_required] || authorize!(:download, digital_link)
+        !SolidusDigital::Config[:authentication_required] || !SolidusDigital::Config[:authorization_required] || authorize!(:download, digital_link)
       end
 
       def authorize_and_send_file!
