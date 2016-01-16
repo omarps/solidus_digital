@@ -1,5 +1,6 @@
 module Spree
   class Digital < ActiveRecord::Base
+    self.table_name = 'solidus_digitals'
     belongs_to :variant
     has_many :digital_links, dependent: :destroy
     after_save :delete_digital_links_attachments, if: :attachment_changed?

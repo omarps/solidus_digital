@@ -2,6 +2,7 @@ require 'fileutils'
 
 module Spree
   class DigitalLink < ActiveRecord::Base
+    self.table_name = 'solidus_digital_links'
     belongs_to :digital
     validates :digital, :presence => true
     delegate :variant, to: :digital

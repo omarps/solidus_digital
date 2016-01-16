@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'solidus_backend'
   s.add_dependency 'solidus_core'
   s.add_dependency 'solidus_frontend'
+  s.add_dependency 'deface'
 
   # test suite
   s.add_development_dependency 'shoulda-matchers'
