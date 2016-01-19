@@ -1,6 +1,24 @@
 Spree::Order.class_eval do
   register_update_hook :generate_digital_links
 
+  # removing address state if all items are digital
+  checkout_flow do
+    go_to_state :address, if: ->(order) {!order.digital?}
+    go_to_state :delivery, if: ->(order) {!order.digital?}
+    go_to_state :payment, if: ->(order) { order.payment_required? }
+    go_to_state :confirm
+  end
+
+
+  # before_transition to: :payment, do: :set_digital_shipment
+
+  def set_digital_shipment
+    debugger
+    if self.digital?
+      puts 'yes'
+    end
+  end
+
   # all products are digital
   def digital?
     line_items.all? { |item| item.digital? }
