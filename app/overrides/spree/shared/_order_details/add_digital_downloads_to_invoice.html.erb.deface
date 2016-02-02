@@ -1,4 +1,6 @@
 <!-- insert_bottom "td[data-hook='order_item_description']" -->
+<h1>add by deface</h1>
+<%= item.digital_links[0] %>
 <% if @order.state == 'complete' and item.variant.digital? %>
   <div class='download-links' data-hook='download_links'>
     <%= Spree.t("digitals.click_to_download") %>
