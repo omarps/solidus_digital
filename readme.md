@@ -100,7 +100,7 @@ Add this line to the `Gemfile` in your Spree project:
 
 ```ruby
 # Depending on your Spree version, you may use another branch
-gem 'solidus_digital', github: 'halo/solidus_digital', branch: '3-0-stable'
+gem 'solidus_digital', github: 'samanmohamadi/solidus_digital', branch: 'master'
 ```
 
 The following terminal commands will copy the migration files to the corresponding directory in your Rails application and apply the migrations to your database.
