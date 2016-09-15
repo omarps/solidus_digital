@@ -13,10 +13,11 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
   s.required_ruby_version = '>= 1.9.3'
 
-  s.add_dependency 'spree_api'
-  s.add_dependency 'spree_backend'
-  s.add_dependency 'spree_core', '~> 2.1.0'
-  s.add_dependency 'spree_frontend'
+  # s.add_dependency 'spree_api'
+  # s.add_dependency 'spree_backend'
+  # s.add_dependency 'spree_core', '~> 2.1.0'
+  # s.add_dependency 'spree_frontend'
+  s.add_dependency 'solidus'
 
   # test suite
   s.add_development_dependency 'shoulda-matchers'
