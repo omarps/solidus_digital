@@ -13,7 +13,8 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
   s.required_ruby_version = '>= 1.8.7'
 
-  s.add_dependency 'spree_core', '~> 1.3.0'
+  # s.add_dependency 'spree_core', '~> 1.3.0'
+  s.add_dependency 'solidus_core', '~> 1.3.1'
 
   # test suite
   s.add_development_dependency 'shoulda-matchers'
